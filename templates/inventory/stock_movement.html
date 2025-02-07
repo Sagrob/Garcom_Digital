@@ -1,0 +1,8 @@
+<h2>Register Stock Movement</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<a href="{% url 'item_list' %}">Back to Inventory</a>
