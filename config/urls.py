@@ -17,11 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from menu.views import item_list, stock_movement
+from orders.views import create_qr_code, show_table
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', item_list, name='item_list'),
     path('stock-movement/', stock_movement, name='stock_movement'),
+    path('create_qr_code/<int:table_id>/', create_qr_code, name='create_qr_code'),
+    path('table/<int:table_id>/', show_table, name='show_tables'),
     
 ]

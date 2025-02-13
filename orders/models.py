@@ -26,6 +26,9 @@ class Order(models.Model):
 
     class Meta:
         db_table = 'orders'
+    
+    def __str__(self):
+        return f'Order {self.id}'
 
 class OrderItem(models.Model):
     orderId = models.ForeignKey(Order, on_delete=models.CASCADE, blank=True)
@@ -35,3 +38,4 @@ class OrderItem(models.Model):
 
     class Meta:
         db_table = 'order_items'
+
